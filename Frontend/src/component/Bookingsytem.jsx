@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 function BookingVisitForm() {
   const [step, setStep] = useState(1);
@@ -31,6 +32,7 @@ function BookingVisitForm() {
                 2
               </span>
               <span className="ml-2">Select Date & Time</span>
+              
             </div>
             <span className="text-gray-400">&mdash;</span>
             <div className={`flex items-center ${step === 3 ? 'text-blue-500' : 'text-gray-400'}`}>

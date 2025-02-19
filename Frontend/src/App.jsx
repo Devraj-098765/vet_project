@@ -10,6 +10,7 @@ import AboutUs from "./component/About/About";
 import Consultation from "./component/Consultation/Consultation";
 import Footer from "./component/Footer/Footer";
 import Contact from "./utils/Contact";
+import  Selectdate from "./component/Index/selectdate"
 
 function App() {
   const router = createBrowserRouter([
@@ -48,6 +49,10 @@ function App() {
               <BookingVisitForm />
             </ProtectedRoute>
           ),
+        },
+        {
+          path: "/selectdate",
+          element:<Selectdate/>,
         },
       ],
     },
