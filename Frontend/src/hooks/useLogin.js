@@ -30,7 +30,7 @@ const useSignup = () => {
       }
 
       toast.success("User Logged In successfully");
-      navigate("/conversations");
+      navigate("/");
       localStorage.removeItem("currentConversationId");
       localStorage.removeItem("currentConversationTitle");
       setConversations(null);

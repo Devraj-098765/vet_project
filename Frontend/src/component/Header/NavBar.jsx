@@ -1,19 +1,20 @@
 import { FaUserCircle } from "react-icons/fa"; // User icon
 import { useState, useEffect, useRef } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const NavBar = () => {
   // Simulated authentication state
-  const [isAuthenticated, setIsAuthenticated] = useState(true); // Set to true to simulate signed in
+  const { auth, logout } = useAuth();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
   // Simulate logout
   const handleLogout = () => {
-    setIsAuthenticated(false); // Reset auth state
     setDropdownOpen(false);
-    navigate("/login"); // Redirect to login page
+    navigate("/login"); 
+    logout();
   };
 
   // Toggle dropdown menu
@@ -34,7 +35,7 @@ const NavBar = () => {
     };
   }, []);
 
-  return (
+  return ( 
     <nav className="relative bg-white px-6 py-3 rounded-full shadow-md space-x-6 flex items-center mt-10">
       <NavLink to="/" className="text-gray-600 hover:text-black">
         Vetcare
@@ -56,7 +57,7 @@ const NavBar = () => {
         Contact
       </NavLink>
 
-      {!isAuthenticated ? (
+      {!auth.token ? (
         <button className="bg-blue-500 text-white px-4 py-2 rounded-full">
           <NavLink to="/login">Sign up</NavLink>
         </button>
