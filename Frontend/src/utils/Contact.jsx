@@ -82,37 +82,40 @@ const Contact = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-blue-600 text-white py-10 mt-16 text-center">
-        <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Quick Links */}
+      <footer className="bg-gray-100 text-gray-800 py-10 mt-16">
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+          
           <div>
-            <h3 className="font-bold">Quick Links</h3>
+            <h3 className="font-bold text-lg">Vetcare</h3>
             <ul className="mt-3 space-y-2">
               <li><NavLink to="/consultation" className="hover:underline">Consultation</NavLink></li>
               <li><NavLink to="/all-veterinarians" className="hover:underline">All Veterinarians</NavLink></li>
               <li><NavLink to="/about-us" className="hover:underline">About Us</NavLink></li>
+              <li><NavLink to="/book-appointment" className="hover:underline">Book Appointment</NavLink></li>
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
-            <h3 className="font-bold">Contact Info</h3>
-            <p className="mt-3">support@vetcare.com</p>
-            <p>+977 9840753049</p>
+            <h3 className="font-bold text-lg">Stay Connected</h3>
+            <p className="mt-2 text-gray-600">Contact:</p>
+            <p className="font-semibold text-blue-600">hi.Vetpeople@Vetcare.com</p>
+            <div className="mt-3 flex space-x-4">
+              <a href="#" className="text-gray-600 hover:text-blue-600"><FaFacebook size={24} /></a>
+              <a href="#" className="text-gray-600 hover:text-blue-600"><FaInstagram size={24} /></a>
+            </div>
           </div>
 
-          {/* Follow Us */}
-          <div>
-            <h3 className="font-bold">Follow Us</h3>
-            <div className="mt-3 flex justify-center space-x-4">
-              <a href="#" className="hover:text-gray-300"><FaFacebook size={24} /></a>
-              <a href="#" className="hover:text-gray-300"><FaInstagram size={24} /></a>
-            </div>
+          <div className="text-center md:text-left">
+            <h3 className="font-bold text-lg">Join as Vetfamily and get 10% OFF</h3>
+            <p className="mt-2 text-gray-600">Our services are wide open for you</p>
+            <button className="mt-4 border border-gray-600 px-4 py-2 rounded-full text-lg font-semibold hover:bg-gray-200 transition">
+              Be Vetfamily
+            </button>
           </div>
         </div>
 
-        <div className="mt-6 text-sm">
-          &copy; 2025 VetCare. All rights reserved.
+        <div className="mt-6 text-center text-sm text-gray-500">
+          &copy; Vetcare.co • <NavLink to="/terms" className="hover:underline">Terms and Privacy Policy</NavLink>
         </div>
       </footer>
     </>
